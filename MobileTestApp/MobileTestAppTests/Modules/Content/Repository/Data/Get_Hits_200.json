@@ -1,0 +1,116 @@
+{
+    "hits":[
+        {
+            "created_at":"2019-01-05T19:40:31.000Z",
+            "title":null,
+            "url":null,
+            "author":"yjftsjthsd-h",
+            "points":null,
+            "story_text":null,
+            "comment_text":"Unfortunately, \u003ca href=\"http:\u0026#x2F;\u0026#x2F;www.helenos.org\u0026#x2F;wiki\u0026#x2F;DiffFromUnix\" rel=\"nofollow\"\u003ehttp:\u0026#x2F;\u0026#x2F;www.helenos.org\u0026#x2F;wiki\u0026#x2F;DiffFromUnix\u003c/a\u003e presents it as different enough to make porting software difficult. On the other hand, they say they\u0026#x27;ve got GCC and Python, so it\u0026#x27;s doable.",
+            "num_comments":null,
+            "story_id":18833124,
+            "story_title":"HelenOS 0.8.0 Released",
+            "story_url":"http://www.helenos.org/wiki/ReleaseNotes/0.8.0",
+            "parent_id":18833563,
+            "created_at_i":1546717231,
+            "_tags":[
+                "comment",
+                "author_yjftsjthsd-h",
+                "story_18833124"
+            ],
+            "objectID":"18833731",
+            "_highlightResult":{
+                "author":{
+                    "value":"yjftsjthsd-h",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                },
+                "comment_text":{
+                    "value":"Unfortunately, \u003ca href=\"http://www.helenos.org/wiki/DiffFromUnix\" rel=\"nofollow\"\u003ehttp://www.helenos.org/wiki/DiffFromUnix\u003c/a\u003e presents it as different enough to make porting software difficult. On the other hand, they say they've got GCC and Python, so \u003cem\u003eit's\u003c/em\u003e doable.",
+                    "matchLevel":"full",
+                    "fullyHighlighted":false,
+                    "matchedWords":[
+                        "ios"
+                    ]
+                },
+                "story_title":{
+                    "value":"HelenOS 0.8.0 Released",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                },
+                "story_url":{
+                    "value":"http://www.helenos.org/wiki/ReleaseNotes/0.8.0",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                }
+            }
+        },
+        {
+            "created_at":"2019-01-05T19:40:21.000Z",
+            "title":null,
+            "url":null,
+            "author":"westurner",
+            "points":null,
+            "story_text":null,
+            "comment_text":"\u0026gt; \u003ci\u003eWhy would people attend predatory colleges?\u003c/i\u003e\u003cp\u003eWhy would people make an investment with insufficient ROI (Return on Investment)?\u003cp\u003eInsufficient information.\u003cp\u003eCollege Scorecard is a database with a web interface for finding and comparing schools according to a number of objective criteria. It lists \u0026quot;Average Annual Cost\u0026quot;, \u0026quot;Graduation Rate\u0026quot;, and \u0026quot;Salary After Attending\u0026quot; on the search results pages. When you review a detail page for an institution, there are many additional statistics; things like: \u0026quot;Typical Total Debt After Graduation\u0026quot; and \u0026quot;Typical Monthly Loan Payment\u0026quot;.\u003cp\u003eThe raw data behind CollegeScorecard can be downloaded from [2]. The \u0026quot;data_dictionary\u0026quot; tab of the \u0026quot;Data Dictionary\u0026quot; spreadsheet describes the data schema.\u003cp\u003e[1] \u003ca href=\"https:\u0026#x2F;\u0026#x2F;collegescorecard.ed.gov\" rel=\"nofollow\"\u003ehttps:\u0026#x2F;\u0026#x2F;collegescorecard.ed.gov\u003c/a\u003e\u003cp\u003e[2] \u003ca href=\"https:\u0026#x2F;\u0026#x2F;collegescorecard.ed.gov\u0026#x2F;data\u0026#x2F;\" rel=\"nofollow\"\u003ehttps:\u0026#x2F;\u0026#x2F;collegescorecard.ed.gov\u0026#x2F;data\u0026#x2F;\u003c/a\u003e\u003cp\u003eKhan Academy \u0026gt; \u0026quot;College, careers, and more\u0026quot; [3] may be a helpful supplement for funding a full-time college admissions counselor in a secondary education institution\u003cp\u003e[3] \u003ca href=\"https:\u0026#x2F;\u0026#x2F;www.khanacademy.org\u0026#x2F;college-careers-more\" rel=\"nofollow\"\u003ehttps:\u0026#x2F;\u0026#x2F;www.khanacademy.org\u0026#x2F;college-careers-more\u003c/a\u003e\u003cp\u003e(I haven\u0026#x27;t the time to earn 10 \u003ci\u003eacademia.stackexchange\u003c/i\u003e points in order to earn the prestigious opportunity to contribute this answer to such a forum with threaded comments. In the academic journal system, journals sell academics\u0026#x27; work (i.e. schema.org\u0026#x2F;ScholarlyArticle PDFs, mobile-compatible responsive HTML 5, RDFa, JSON-LD structured data) and keep all of the revenue).",
+            "num_comments":null,
+            "story_id":18832900,
+            "story_title":"Why attend predatory colleges in the US?",
+            "story_url":"https://academia.stackexchange.com/q/64834/746",
+            "parent_id":18832900,
+            "created_at_i":1546717221,
+            "_tags":[
+                "comment",
+                "author_westurner",
+                "story_18832900"
+            ],
+            "objectID":"18833730",
+            "_highlightResult":{
+                "author":{
+                    "value":"westurner",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                },
+                "comment_text":{
+                    "value":"\u0026gt; \u003ci\u003eWhy would people attend predatory colleges?\u003c/i\u003e\u003cp\u003eWhy would people make an investment with \u003cem\u003eins\u003c/em\u003eufficient ROI (Return on Investment)?\u003cp\u003e\u003cem\u003eIns\u003c/em\u003eufficient information.\u003cp\u003eCollege Scorecard is a database with a web interface for finding and comparing schools according to a number of objective criteria. It lists \u0026quot;Average Annual Cost\u0026quot;, \u0026quot;Graduation Rate\u0026quot;, and \u0026quot;Salary After Attending\u0026quot; on the search results pages. When you review a detail page for an \u003cem\u003eins\u003c/em\u003etitution, there are many additional statistics; things like: \u0026quot;Typical Total Debt After Graduation\u0026quot; and \u0026quot;Typical Monthly Loan Payment\u0026quot;.\u003cp\u003eThe raw data behind CollegeScorecard can be downloaded from [2]. The \u0026quot;data_dictionary\u0026quot; tab of the \u0026quot;Data Dictionary\u0026quot; spreadsheet describes the data schema.\u003cp\u003e[1] \u003ca href=\"https://collegescorecard.ed.gov\" rel=\"nofollow\"\u003ehttps://collegescorecard.ed.gov\u003c/a\u003e\u003cp\u003e[2] \u003ca href=\"https://collegescorecard.ed.gov/data/\" rel=\"nofollow\"\u003ehttps://collegescorecard.ed.gov/data/\u003c/a\u003e\u003cp\u003eKhan Academy \u0026gt; \u0026quot;College, careers, and more\u0026quot; [3] may be a helpful supplement for funding a full-time college admissions counselor in a secondary education \u003cem\u003eins\u003c/em\u003etitution\u003cp\u003e[3] \u003ca href=\"https://www.khanacademy.org/college-careers-more\" rel=\"nofollow\"\u003ehttps://www.khanacademy.org/college-careers-more\u003c/a\u003e\u003cp\u003e(I haven't the time to earn 10 \u003ci\u003eacademia.stackexchange\u003c/i\u003e points in order to earn the prestigious opportunity to contribute this answer to such a forum with threaded comments. In the academic journal system, journals sell academics' work (i.e. schema.org/ScholarlyArticle PDFs, mobile-compatible responsive HTML 5, RDFa, JSON-LD structured data) and keep all of the revenue).",
+                    "matchLevel":"full",
+                    "fullyHighlighted":false,
+                    "matchedWords":[
+                        "ios"
+                    ]
+                },
+                "story_title":{
+                    "value":"Why attend predatory colleges in the US?",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                },
+                "story_url":{
+                    "value":"https://academia.stackexchange.com/q/64834/746",
+                    "matchLevel":"none",
+                    "matchedWords":[
+
+                    ]
+                }
+            }
+        }
+    ],
+    "nbHits":118336,
+    "page":0,
+    "nbPages":50,
+    "hitsPerPage":20,
+    "processingTimeMS":17,
+    "exhaustiveNbHits":false,
+    "query":"ios",
+    "params":"advancedSyntax=true\u0026analytics=false\u0026query=ios"
+}
