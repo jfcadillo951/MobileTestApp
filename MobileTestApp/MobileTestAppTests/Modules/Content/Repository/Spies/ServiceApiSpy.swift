@@ -10,14 +10,11 @@ import UIKit
 @testable import MobileTestApp
 
 class ServiceApiSuccessSpy: ServiceApiProtocol {
-    func getHits(success: @escaping (([String: Any]) -> Void), error: @escaping ((NSError?, Int) -> Void)) {
+    func getHits(success: @escaping ((Data) -> Void), error: @escaping ((NSError?, Int) -> Void)) {
         if let path = Bundle.main.path(forResource: "Get_Hits_200", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
-                    success(jsonResult)
-                }
+                success(data)
             } catch {
                 // error(nil, 0)
             }
@@ -28,7 +25,7 @@ class ServiceApiSuccessSpy: ServiceApiProtocol {
 }
 
 class ServiceApiErrorSpy: ServiceApiProtocol {
-    func getHits(success: @escaping (([String: Any]) -> Void), error: @escaping ((NSError?, Int) -> Void)) {
+    func getHits(success: @escaping ((Data) -> Void), error: @escaping ((NSError?, Int) -> Void)) {
         error(nil, 0)
     }
 }

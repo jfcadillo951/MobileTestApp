@@ -24,4 +24,8 @@ class ListViewSpy: ListViewProtocol {
         displayErrorWasCalled = true
         displayErrorMessage = message
     }
+
+    func deleteHit(hits: [Hit], indexPath: IndexPath) {
+
+    }
 }

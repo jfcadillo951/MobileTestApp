@@ -9,6 +9,21 @@
 import UIKit
 @testable import MobileTestApp
 
+class ContentRepositoryEmptySuccessSpy: ContentRepositoryProtocol {
+    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
+        let hitsReponse = HitsResponse()
+        onSuccess(hitsReponse)
+    }
+
+    func saveDeletedHit(hitId: String) {
+
+    }
+
+    func getDeletedHits(deletedHits: @escaping ((Set<String>) -> Void)) {
+        deletedHits([])
+    }
+}
+
 class ContentRepositorySuccessSpy: ContentRepositoryProtocol {
     func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
         let hit = Hit(JSON: ["objectID" : "1234",
@@ -19,10 +34,26 @@ class ContentRepositorySuccessSpy: ContentRepositoryProtocol {
         hitsReponse.hits = [hit!]
         onSuccess(hitsReponse)
     }
+
+    func saveDeletedHit(hitId: String) {
+
+    }
+
+    func getDeletedHits(deletedHits: @escaping ((Set<String>) -> Void)) {
+        deletedHits([])
+    }
 }
 
 class ContentRepositoryErrorSpy: ContentRepositoryProtocol {
     func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
         onError(StringConstant.UNKNOW_ERROR)
+    }
+
+    func saveDeletedHit(hitId: String) {
+
+    }
+
+    func getDeletedHits(deletedHits: @escaping ((Set<String>) -> Void)) {
+        deletedHits([])
     }
 }

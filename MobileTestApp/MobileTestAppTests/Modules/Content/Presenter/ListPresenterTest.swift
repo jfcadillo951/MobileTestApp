@@ -22,6 +22,20 @@ class ListPresenterTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testGetsHitsEmptySuccess() {
+        // Given
+        view = ListViewSpy()
+        let repository = ContentRepositoryEmptySuccessSpy()
+        presenter = ListPresenter(view: view, repository: repository)
+
+        // When
+        presenter.getHits()
+
+        // Then
+        XCTAssertTrue(view.displayErrorWasCalled)
+        XCTAssertEqual(view.displayErrorMessage, StringConstant.CONTENT_LIST_EMPTY)
+    }
+
     func testGetsHitsSuccess() {
         // Given
         view = ListViewSpy()

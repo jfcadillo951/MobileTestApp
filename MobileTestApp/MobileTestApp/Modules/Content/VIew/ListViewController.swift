@@ -11,14 +11,17 @@ import UIKit
 protocol ListViewProtocol {
     func displayHits(hits: [Hit])
     func displayError(message: String)
+    func deleteHit(hits: [Hit], indexPath: IndexPath)
 }
 
 class ListViewController: UIViewController {
-
-
     @IBOutlet weak var listTableView: UITableView!
     var presenter: ListPresenter?
     var hits: [Hit] = []
+
+    convenience init() {
+        return ListViewController(nibName: "ListViewController", bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +38,15 @@ class ListViewController: UIViewController {
 
 extension ListViewController: ListViewProtocol {
     func displayHits(hits: [Hit]) {
+        self.hits = hits
         self.listTableView.reloadData()
     }
     func displayError(message: String) {
 
+    }
+    func deleteHit(hits: [Hit], indexPath: IndexPath) {
+        self.hits = hits
+        self.listTableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 

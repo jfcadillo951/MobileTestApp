@@ -10,11 +10,13 @@ import UIKit
 
 protocol ListPresenterProtocol {
     func getHits()
+    func deleteHit(indexPath: IndexPath)
 }
 class ListPresenter: ListPresenterProtocol {
 
     let view: ListViewProtocol
     let repository: ContentRepositoryProtocol
+    var hits: [Hit] = []
 
     init(view: ListViewProtocol,
          repository: ContentRepositoryProtocol = ContentRepository(serviceApi: ServiceApi())) {
@@ -24,14 +26,32 @@ class ListPresenter: ListPresenterProtocol {
 
     func getHits() {
         self.repository.getHits(onSuccess: { [weak self] (hitsResponse) in
-            if let hits = hitsResponse.hits, !hits.isEmpty {
-                self?.view.displayHits(hits: hits)
-            } else {
-                self?.view.displayError(message: StringConstant.CONTENT_LIST_EMPTY)
-            }
+            self?.repository.getDeletedHits(deletedHits: { [weak self] (set) in
+                self?.hits = []
+                let filterHits = hitsResponse.hits?.filter({ (filterHit) -> Bool in
+                    return !set.contains(filterHit.objectID ?? "")
+                })
+                if let hits = filterHits, !hits.isEmpty {
+                    self?.hits = hits
+                    self?.view.displayHits(hits: hits)
+                } else {
+                    self?.view.displayError(message: StringConstant.CONTENT_LIST_EMPTY)
+                }
+            })
 
         }) { [weak self] (errorString) in
             self?.view.displayError(message: errorString)
         }
+    }
+
+    func deleteHit(indexPath: IndexPath) {
+        let hit = hits[indexPath.row]
+        self.repository.saveDeletedHit(hitId: hit.objectID!)
+        self.repository.getDeletedHits(deletedHits: { [weak self] (set) in
+            let filterHits = self?.hits.filter({ (filterHit) -> Bool in
+                return !set.contains(filterHit.objectID ?? "")
+            })
+            self?.view.deleteHit(hits: filterHits!, indexPath: indexPath)
+        })
     }
 }
