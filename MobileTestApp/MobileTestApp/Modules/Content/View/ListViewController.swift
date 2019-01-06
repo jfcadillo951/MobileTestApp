@@ -31,6 +31,7 @@ class ListViewController: UIViewController {
     }
 
     func setup() {
+        self.navigationItem.title = StringConstant.APP_NAME
         self.listTableView.register(UINib(nibName: HitTableViewCell.nibName, bundle: nil),
                                     forCellReuseIdentifier: HitTableViewCell.reuseIdentifier)
         self.listTableView.delegate = self
@@ -45,7 +46,7 @@ extension ListViewController: ListViewProtocol {
         self.listTableView.reloadData()
     }
     func displayError(message: String) {
-        alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alertController = UIAlertController(title: StringConstant.APP_NAME, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
             self?.alertController?.dismiss(animated: true, completion: nil)
         }

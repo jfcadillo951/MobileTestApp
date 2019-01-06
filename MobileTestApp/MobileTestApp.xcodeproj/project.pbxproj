@@ -217,7 +217,7 @@
 			children = (
 				8EB39C8A21E14019002D2FB0 /* Repository */,
 				8EB39C8221E06CD6002D2FB0 /* Presenter */,
-				8EB39C8121E06CD0002D2FB0 /* VIew */,
+				8EB39C8121E06CD0002D2FB0 /* View */,
 				8EB39C7F21E06CC3002D2FB0 /* Model */,
 			);
 			path = Content;
@@ -232,14 +232,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8EB39C8121E06CD0002D2FB0 /* VIew */ = {
+		8EB39C8121E06CD0002D2FB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8EB39CB121E1D4CC002D2FB0 /* Cells */,
 				8EB39CA221E19741002D2FB0 /* ListViewController.swift */,
 				8EB39CA321E19741002D2FB0 /* ListViewController.xib */,
 			);
-			path = VIew;
+			path = View;
 			sourceTree = "<group>";
 		};
 		8EB39C8221E06CD6002D2FB0 /* Presenter */ = {
