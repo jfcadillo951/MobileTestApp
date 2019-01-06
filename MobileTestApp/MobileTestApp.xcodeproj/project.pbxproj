@@ -37,6 +37,7 @@
 		8EF7646521E2A6A500FB7BCC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7646421E2A6A500FB7BCC /* DateHelper.swift */; };
 		8EF7646821E2A92500FB7BCC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7646621E2A92500FB7BCC /* DetailViewController.swift */; };
 		8EF7646921E2A92500FB7BCC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF7646721E2A92500FB7BCC /* DetailViewController.xib */; };
+		8EF7646B21E2AE3C00FB7BCC /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7646A21E2AE3C00FB7BCC /* DetailPresenter.swift */; };
 		B016888B5F35AAE60A5C6603 /* Pods_MobileTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D49CFC7F3D682A6050AE13E /* Pods_MobileTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		8EF7646421E2A6A500FB7BCC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		8EF7646621E2A92500FB7BCC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8EF7646721E2A92500FB7BCC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		8EF7646A21E2AE3C00FB7BCC /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		94673E92EC9747FFC8E42533 /* Pods_MobileTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5106AC797D40DCD7FCA546C /* Pods-MobileTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileTestApp/Pods-MobileTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				8EB39C8B21E14046002D2FB0 /* ListPresenter.swift */,
+				8EF7646A21E2AE3C00FB7BCC /* DetailPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				8EB39C5121E065A5002D2FB0 /* ViewController.swift in Sources */,
 				8EB39C4F21E065A5002D2FB0 /* AppDelegate.swift in Sources */,
 				8EB39C8921E070E3002D2FB0 /* HitsResponse.swift in Sources */,
+				8EF7646B21E2AE3C00FB7BCC /* DetailPresenter.swift in Sources */,
 				8EB39CAE21E1A217002D2FB0 /* StorageUserDefault.swift in Sources */,
 				8EB39C8721E0708A002D2FB0 /* ServiceApi.swift in Sources */,
 				8EB39CB421E1D4E6002D2FB0 /* HitTableViewCell.swift in Sources */,
