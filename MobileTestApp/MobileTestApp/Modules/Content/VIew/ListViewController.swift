@@ -20,7 +20,7 @@ class ListViewController: UIViewController {
     var hits: [Hit] = []
 
     convenience init() {
-        return ListViewController(nibName: "ListViewController", bundle: nil)
+        self.init(nibName: "ListViewController", bundle: nil)
     }
 
     override func viewDidLoad() {
