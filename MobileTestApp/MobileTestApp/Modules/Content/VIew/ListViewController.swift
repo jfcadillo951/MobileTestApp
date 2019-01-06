@@ -16,6 +16,7 @@ protocol ListViewProtocol {
 
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
+    var alertController: UIAlertController?
     var presenter: ListPresenter?
     var hits: [Hit] = []
 
@@ -30,6 +31,8 @@ class ListViewController: UIViewController {
     }
 
     func setup() {
+        self.listTableView.register(UINib(nibName: HitTableViewCell.nibName, bundle: nil),
+                                    forCellReuseIdentifier: HitTableViewCell.reuseIdentifier)
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         presenter = ListPresenter(view: self)
@@ -42,7 +45,14 @@ extension ListViewController: ListViewProtocol {
         self.listTableView.reloadData()
     }
     func displayError(message: String) {
+        alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
+            self?.alertController?.dismiss(animated: true, completion: nil)
+        }
+        alertController?.addAction(okAction)
+        self.present(alertController!, animated: true) {
 
+        }
     }
     func deleteHit(hits: [Hit], indexPath: IndexPath) {
         self.hits = hits
@@ -52,6 +62,10 @@ extension ListViewController: ListViewProtocol {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: HitTableViewCell.reuseIdentifier, for: indexPath) as? HitTableViewCell {
+            cell.setup(data: self.hits[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,7 +78,7 @@ extension ListViewController: UITableViewDataSource {
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 40.0
     }
 }
 
