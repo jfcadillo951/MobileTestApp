@@ -18,6 +18,10 @@ class HitsResponse: Mappable {
     var processingTimeMS: Int?
     var exhaustiveNbHits: Bool?
 
+    init() {
+
+    }
+
     required init?(map: Map) {
     }
 

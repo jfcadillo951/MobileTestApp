@@ -22,10 +22,14 @@
 		8EB39C8C21E14046002D2FB0 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C8B21E14046002D2FB0 /* ListPresenter.swift */; };
 		8EB39C8E21E14071002D2FB0 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C8D21E14071002D2FB0 /* ContentRepository.swift */; };
 		8EB39C9621E14857002D2FB0 /* ServiceApiSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C9521E14857002D2FB0 /* ServiceApiSpy.swift */; };
-		8EB39C9921E14DFE002D2FB0 /* Get_Hits_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39C9821E14DFE002D2FB0 /* Get_Hits_200.json */; };
 		8EB39C9B21E14FB3002D2FB0 /* ContentRespositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C9A21E14FB3002D2FB0 /* ContentRespositoryTest.swift */; };
 		8EB39C9D21E15941002D2FB0 /* StringConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C9C21E15941002D2FB0 /* StringConstant.swift */; };
-		8EB39C9E21E15AF0002D2FB0 /* Get_Hits_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39C9821E14DFE002D2FB0 /* Get_Hits_200.json */; };
+		8EB39CA121E19683002D2FB0 /* Get_Hits_200.json in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39CA021E19683002D2FB0 /* Get_Hits_200.json */; };
+		8EB39CA421E19741002D2FB0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CA221E19741002D2FB0 /* ListViewController.swift */; };
+		8EB39CA521E19741002D2FB0 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39CA321E19741002D2FB0 /* ListViewController.xib */; };
+		8EB39CA821E19AED002D2FB0 /* ContentRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CA721E19AED002D2FB0 /* ContentRepositorySpy.swift */; };
+		8EB39CAA21E19D2F002D2FB0 /* ListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CA921E19D2F002D2FB0 /* ListPresenterTest.swift */; };
+		8EB39CAC21E19D90002D2FB0 /* ListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CAB21E19D90002D2FB0 /* ListViewSpy.swift */; };
 		B016888B5F35AAE60A5C6603 /* Pods_MobileTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D49CFC7F3D682A6050AE13E /* Pods_MobileTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,9 +77,14 @@
 		8EB39C8B21E14046002D2FB0 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		8EB39C8D21E14071002D2FB0 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
 		8EB39C9521E14857002D2FB0 /* ServiceApiSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiSpy.swift; sourceTree = "<group>"; };
-		8EB39C9821E14DFE002D2FB0 /* Get_Hits_200.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Get_Hits_200.json; sourceTree = "<group>"; };
 		8EB39C9A21E14FB3002D2FB0 /* ContentRespositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRespositoryTest.swift; sourceTree = "<group>"; };
 		8EB39C9C21E15941002D2FB0 /* StringConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstant.swift; sourceTree = "<group>"; };
+		8EB39CA021E19683002D2FB0 /* Get_Hits_200.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Get_Hits_200.json; sourceTree = "<group>"; };
+		8EB39CA221E19741002D2FB0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8EB39CA321E19741002D2FB0 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		8EB39CA721E19AED002D2FB0 /* ContentRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepositorySpy.swift; sourceTree = "<group>"; };
+		8EB39CA921E19D2F002D2FB0 /* ListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTest.swift; sourceTree = "<group>"; };
+		8EB39CAB21E19D90002D2FB0 /* ListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewSpy.swift; sourceTree = "<group>"; };
 		94673E92EC9747FFC8E42533 /* Pods_MobileTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5106AC797D40DCD7FCA546C /* Pods-MobileTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileTestApp/Pods-MobileTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,6 +227,8 @@
 		8EB39C8121E06CD0002D2FB0 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				8EB39CA221E19741002D2FB0 /* ListViewController.swift */,
+				8EB39CA321E19741002D2FB0 /* ListViewController.xib */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 		8EB39C8A21E14019002D2FB0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				8EB39C9F21E1964B002D2FB0 /* Data */,
 				8EB39C8D21E14071002D2FB0 /* ContentRepository.swift */,
 			);
 			path = Repository;
@@ -267,6 +279,8 @@
 		8EB39C9221E1481D002D2FB0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8EB39CA621E19ACE002D2FB0 /* Spies */,
+				8EB39CA921E19D2F002D2FB0 /* ListPresenterTest.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -292,9 +306,25 @@
 		8EB39C9721E14DD6002D2FB0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8EB39C9821E14DFE002D2FB0 /* Get_Hits_200.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8EB39C9F21E1964B002D2FB0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8EB39CA021E19683002D2FB0 /* Get_Hits_200.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8EB39CA621E19ACE002D2FB0 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				8EB39CA721E19AED002D2FB0 /* ContentRepositorySpy.swift */,
+				8EB39CAB21E19D90002D2FB0 /* ListViewSpy.swift */,
+			);
+			path = Spies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +436,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB39C5921E065A5002D2FB0 /* LaunchScreen.storyboard in Resources */,
-				8EB39C9E21E15AF0002D2FB0 /* Get_Hits_200.json in Resources */,
+				8EB39CA121E19683002D2FB0 /* Get_Hits_200.json in Resources */,
+				8EB39CA521E19741002D2FB0 /* ListViewController.xib in Resources */,
 				8EB39C5621E065A5002D2FB0 /* Assets.xcassets in Resources */,
 				8EB39C5421E065A5002D2FB0 /* Main.storyboard in Resources */,
 			);
@@ -416,7 +447,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EB39C9921E14DFE002D2FB0 /* Get_Hits_200.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +564,7 @@
 				8EB39C4F21E065A5002D2FB0 /* AppDelegate.swift in Sources */,
 				8EB39C8921E070E3002D2FB0 /* HitsResponse.swift in Sources */,
 				8EB39C8721E0708A002D2FB0 /* ServiceApi.swift in Sources */,
+				8EB39CA421E19741002D2FB0 /* ListViewController.swift in Sources */,
 				8EB39C8C21E14046002D2FB0 /* ListPresenter.swift in Sources */,
 				8EB39C8421E06CFC002D2FB0 /* Hit.swift in Sources */,
 				8EB39C8E21E14071002D2FB0 /* ContentRepository.swift in Sources */,
@@ -544,7 +575,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB39CA821E19AED002D2FB0 /* ContentRepositorySpy.swift in Sources */,
+				8EB39CAA21E19D2F002D2FB0 /* ListPresenterTest.swift in Sources */,
 				8EB39C6421E065A5002D2FB0 /* MobileTestAppTests.swift in Sources */,
+				8EB39CAC21E19D90002D2FB0 /* ListViewSpy.swift in Sources */,
 				8EB39C9621E14857002D2FB0 /* ServiceApiSpy.swift in Sources */,
 				8EB39C9B21E14FB3002D2FB0 /* ContentRespositoryTest.swift in Sources */,
 			);

@@ -11,6 +11,7 @@ import UIKit
 protocol ContentRepositoryProtocol {
     func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void))
 }
+
 class ContentRepository: ContentRepositoryProtocol {
     let serviceApi: ServiceApiProtocol
     
