@@ -12,6 +12,7 @@ protocol ListViewProtocol {
     func displayHits(hits: [Hit])
     func displayError(message: String)
     func deleteHit(hits: [Hit], indexPath: IndexPath)
+    func displayHitDetail(hit: Hit)
 }
 
 class ListViewController: UIViewController {
@@ -70,6 +71,11 @@ extension ListViewController: ListViewProtocol {
         self.hits = hits
         self.listTableView.deleteRows(at: [indexPath], with: .automatic)
     }
+    func displayHitDetail(hit: Hit) {
+        let viewController = DetailViewController()
+        viewController.urlString = hit.url
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -96,7 +102,8 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        self.presenter?.selectHit(indexPath: indexPath)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

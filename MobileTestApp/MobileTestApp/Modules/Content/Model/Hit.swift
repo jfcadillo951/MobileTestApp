@@ -15,6 +15,8 @@ class Hit: Mappable {
     var title: String?
     var author: String?
     var created_at: String?
+    var url: String?
+    var createdDateFormat: Date?
 
     required init?(map: Map) {
     }
@@ -24,5 +26,8 @@ class Hit: Mappable {
         title       <-      map["story_title"]
         author      <-      map["author"]
         created_at  <-      map["created_at"]
+        url         <-      map["story_url"]
+
+        createdDateFormat = DateHelper.sharedInstance.transform(string: created_at ?? "")
     }
 }

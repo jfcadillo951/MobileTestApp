@@ -34,6 +34,9 @@
 		8EB39CB021E1A8B6002D2FB0 /* StorageSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CAF21E1A8B6002D2FB0 /* StorageSpy.swift */; };
 		8EB39CB421E1D4E6002D2FB0 /* HitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39CB221E1D4E6002D2FB0 /* HitTableViewCell.swift */; };
 		8EB39CB521E1D4E6002D2FB0 /* HitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39CB321E1D4E6002D2FB0 /* HitTableViewCell.xib */; };
+		8EF7646521E2A6A500FB7BCC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7646421E2A6A500FB7BCC /* DateHelper.swift */; };
+		8EF7646821E2A92500FB7BCC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7646621E2A92500FB7BCC /* DetailViewController.swift */; };
+		8EF7646921E2A92500FB7BCC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF7646721E2A92500FB7BCC /* DetailViewController.xib */; };
 		B016888B5F35AAE60A5C6603 /* Pods_MobileTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D49CFC7F3D682A6050AE13E /* Pods_MobileTestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		8EB39CAF21E1A8B6002D2FB0 /* StorageSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSpy.swift; sourceTree = "<group>"; };
 		8EB39CB221E1D4E6002D2FB0 /* HitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTableViewCell.swift; sourceTree = "<group>"; };
 		8EB39CB321E1D4E6002D2FB0 /* HitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HitTableViewCell.xib; sourceTree = "<group>"; };
+		8EF7646421E2A6A500FB7BCC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		8EF7646621E2A92500FB7BCC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8EF7646721E2A92500FB7BCC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		94673E92EC9747FFC8E42533 /* Pods_MobileTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5106AC797D40DCD7FCA546C /* Pods-MobileTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileTestApp/Pods-MobileTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +244,8 @@
 				8EB39CB121E1D4CC002D2FB0 /* Cells */,
 				8EB39CA221E19741002D2FB0 /* ListViewController.swift */,
 				8EB39CA321E19741002D2FB0 /* ListViewController.xib */,
+				8EF7646621E2A92500FB7BCC /* DetailViewController.swift */,
+				8EF7646721E2A92500FB7BCC /* DetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				8EB39C8621E0708A002D2FB0 /* ServiceApi.swift */,
 				8EB39C9C21E15941002D2FB0 /* StringConstant.swift */,
 				8EB39CAD21E1A217002D2FB0 /* StorageUserDefault.swift */,
+				8EF7646421E2A6A500FB7BCC /* DateHelper.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -457,6 +466,7 @@
 			files = (
 				8EB39C5921E065A5002D2FB0 /* LaunchScreen.storyboard in Resources */,
 				8EB39CA121E19683002D2FB0 /* Get_Hits_200.json in Resources */,
+				8EF7646921E2A92500FB7BCC /* DetailViewController.xib in Resources */,
 				8EB39CA521E19741002D2FB0 /* ListViewController.xib in Resources */,
 				8EB39C5621E065A5002D2FB0 /* Assets.xcassets in Resources */,
 				8EB39C5421E065A5002D2FB0 /* Main.storyboard in Resources */,
@@ -580,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF7646821E2A92500FB7BCC /* DetailViewController.swift in Sources */,
 				8EB39C9D21E15941002D2FB0 /* StringConstant.swift in Sources */,
 				8EB39C5121E065A5002D2FB0 /* ViewController.swift in Sources */,
 				8EB39C4F21E065A5002D2FB0 /* AppDelegate.swift in Sources */,
@@ -589,6 +600,7 @@
 				8EB39CB421E1D4E6002D2FB0 /* HitTableViewCell.swift in Sources */,
 				8EB39CA421E19741002D2FB0 /* ListViewController.swift in Sources */,
 				8EB39C8C21E14046002D2FB0 /* ListPresenter.swift in Sources */,
+				8EF7646521E2A6A500FB7BCC /* DateHelper.swift in Sources */,
 				8EB39C8421E06CFC002D2FB0 /* Hit.swift in Sources */,
 				8EB39C8E21E14071002D2FB0 /* ContentRepository.swift in Sources */,
 			);

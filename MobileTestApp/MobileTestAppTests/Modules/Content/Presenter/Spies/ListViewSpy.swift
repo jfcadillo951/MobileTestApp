@@ -33,4 +33,8 @@ class ListViewSpy: ListViewProtocol {
     func deleteHit(hits: [Hit], indexPath: IndexPath) {
 
     }
+
+    func displayHitDetail(hit: Hit) {
+        
+    }
 }
