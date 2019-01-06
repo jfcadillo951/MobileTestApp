@@ -7,22 +7,27 @@
 //
 
 import UIKit
+import XCTest
 @testable import MobileTestApp
 
 class ListViewSpy: ListViewProtocol {
 
     var displayHitsWasCalled = false
     var hits: [Hit]?
+    var displayHitsExpectation: XCTestExpectation?
     func displayHits(hits: [Hit]) {
         displayHitsWasCalled = true
         self.hits = hits
+        displayHitsExpectation?.fulfill()
     }
 
     var displayErrorWasCalled = false
     var displayErrorMessage = ""
+    var displayErrorExpectation: XCTestExpectation?
     func displayError(message: String) {
         displayErrorWasCalled = true
         displayErrorMessage = message
+        displayErrorExpectation?.fulfill()
     }
 
     func deleteHit(hits: [Hit], indexPath: IndexPath) {

@@ -10,7 +10,7 @@ import UIKit
 @testable import MobileTestApp
 
 class ContentRepositoryEmptySuccessSpy: ContentRepositoryProtocol {
-    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
+    func getHits(isFirstTime: Bool, onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
         let hitsReponse = HitsResponse()
         onSuccess(hitsReponse)
     }
@@ -25,7 +25,7 @@ class ContentRepositoryEmptySuccessSpy: ContentRepositoryProtocol {
 }
 
 class ContentRepositorySuccessSpy: ContentRepositoryProtocol {
-    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
+    func getHits(isFirstTime: Bool, onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
         let hit = Hit(JSON: ["objectID" : "1234",
                              "story_title": "test",
                              "author": "author test",
@@ -45,7 +45,7 @@ class ContentRepositorySuccessSpy: ContentRepositoryProtocol {
 }
 
 class ContentRepositoryErrorSpy: ContentRepositoryProtocol {
-    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
+    func getHits(isFirstTime: Bool, onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
         onError(StringConstant.UNKNOW_ERROR)
     }
 

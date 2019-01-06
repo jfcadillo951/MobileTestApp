@@ -35,8 +35,10 @@ class StorageUserDefault: StorageProtocol {
     }
 
     func getDeletedHits() -> Set<String> {
-        if let set = UserDefaults.standard.value(forKey: StorageKey.deletedList.rawValue) as? Set<String> {
-            return set
+        if let encodedData = UserDefaults.standard.value(forKey: StorageKey.deletedList.rawValue) as? Data {
+            if let set = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(encodedData) as? Set<String> {
+                return set
+            }
         }
         return Set<String>()
     }
@@ -50,6 +52,7 @@ class StorageUserDefault: StorageProtocol {
     }
 
     private func saveDeletedHits(set: Set<String>) {
-        UserDefaults.standard.set(set, forKey: StorageKey.deletedList.rawValue)
+        let encodedData: Data = try! NSKeyedArchiver.archivedData(withRootObject: set, requiringSecureCoding: false)
+        UserDefaults.standard.set(encodedData, forKey: StorageKey.deletedList.rawValue)
     }
 }

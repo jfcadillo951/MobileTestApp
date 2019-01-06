@@ -16,6 +16,7 @@ protocol ListViewProtocol {
 
 class ListViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
+    var refreshControl: UIRefreshControl!
     var alertController: UIAlertController?
     var presenter: ListPresenter?
     var hits: [Hit] = []
@@ -27,25 +28,34 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        presenter?.getHits()
+        presenter?.getHits(isFirstTime: true)
     }
 
     func setup() {
         self.navigationItem.title = StringConstant.APP_NAME
         self.listTableView.register(UINib(nibName: HitTableViewCell.nibName, bundle: nil),
                                     forCellReuseIdentifier: HitTableViewCell.reuseIdentifier)
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(callService), for: .valueChanged)
+        self.listTableView.insertSubview(refreshControl, at: 0)
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         presenter = ListPresenter(view: self)
+    }
+
+    @objc func callService() {
+        presenter?.getHits(isFirstTime: false)
     }
 }
 
 extension ListViewController: ListViewProtocol {
     func displayHits(hits: [Hit]) {
+        refreshControl.endRefreshing()
         self.hits = hits
         self.listTableView.reloadData()
     }
     func displayError(message: String) {
+        refreshControl.endRefreshing()
         alertController = UIAlertController(title: StringConstant.APP_NAME, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
             self?.alertController?.dismiss(animated: true, completion: nil)
@@ -56,6 +66,7 @@ extension ListViewController: ListViewProtocol {
         }
     }
     func deleteHit(hits: [Hit], indexPath: IndexPath) {
+        refreshControl.endRefreshing()
         self.hits = hits
         self.listTableView.deleteRows(at: [indexPath], with: .automatic)
     }
@@ -86,5 +97,16 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var array: [UIContextualAction] = []
+        let delete = UIContextualAction(style: .normal, title: StringConstant.CONTENT_LIST_ACTION_DELETE) { (action, view, completed) in
+            self.presenter?.deleteHit(indexPath: indexPath)
+            completed(true)
+        }
+        delete.backgroundColor = .red
+        array.append(delete)
+        return UISwipeActionsConfiguration(actions: array)
     }
 }

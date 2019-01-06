@@ -27,11 +27,12 @@ class ListPresenterTest: XCTestCase {
         view = ListViewSpy()
         let repository = ContentRepositoryEmptySuccessSpy()
         presenter = ListPresenter(view: view, repository: repository)
-
+        view.displayErrorExpectation = expectation(description: "testGetsHitsEmptySuccess")
         // When
-        presenter.getHits()
+        presenter.getHits(isFirstTime: false)
 
         // Then
+        wait(for: [view.displayErrorExpectation!], timeout: 10.0)
         XCTAssertTrue(view.displayErrorWasCalled)
         XCTAssertEqual(view.displayErrorMessage, StringConstant.CONTENT_LIST_EMPTY)
     }
@@ -40,11 +41,12 @@ class ListPresenterTest: XCTestCase {
         // Given
         view = ListViewSpy()
         presenter = ListPresenter(view: view, repository: ContentRepositorySuccessSpy())
-
+        view.displayHitsExpectation = expectation(description: "testGetsHitsSuccess")
         // When
-        presenter.getHits()
+        presenter.getHits(isFirstTime: false)
 
         // Then
+        wait(for: [view.displayHitsExpectation!], timeout: 10.0)
         XCTAssertTrue(view.displayHitsWasCalled)
         XCTAssertEqual(view.hits?.count, 1)
     }
@@ -53,11 +55,12 @@ class ListPresenterTest: XCTestCase {
         // Given
         view = ListViewSpy()
         presenter = ListPresenter(view: view, repository: ContentRepositoryErrorSpy())
-
+        view.displayErrorExpectation = expectation(description: "testGetsHitsError")
         // When
-        presenter.getHits()
+        presenter.getHits(isFirstTime: false)
 
         // Then
+        wait(for: [view.displayErrorExpectation!], timeout: 10.0)
         XCTAssertTrue(view.displayErrorWasCalled)
         XCTAssertEqual(view.displayErrorMessage, StringConstant.UNKNOW_ERROR)
     }

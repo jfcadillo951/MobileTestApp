@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ContentRepositoryProtocol {
-    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void))
+    func getHits(isFirstTime: Bool, onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void))
     func getDeletedHits(deletedHits: @escaping ((Set<String>) -> Void))
     func saveDeletedHit(hitId: String)
 }
@@ -23,11 +23,13 @@ class ContentRepository: ContentRepositoryProtocol {
         self.storage = storage
     }
 
-    func getHits(onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
-        if let savedData = self.storage.getHitsResponse(),
-            let string = String(data: savedData, encoding: String.Encoding.utf8),
-            let hitsResponse = HitsResponse(JSONString: string) {
-            onSuccess(hitsResponse)
+    func getHits(isFirstTime: Bool, onSuccess: @escaping ((HitsResponse) -> Void), onError: @escaping ((String) -> Void)) {
+        if isFirstTime {
+            if let savedData = self.storage.getHitsResponse(),
+                let string = String(data: savedData, encoding: String.Encoding.utf8),
+                let hitsResponse = HitsResponse(JSONString: string) {
+                onSuccess(hitsResponse)
+            }
         }
         serviceApi.getHits(success: { [weak self] (data) in
             if let string = String(data: data, encoding: String.Encoding.utf8),

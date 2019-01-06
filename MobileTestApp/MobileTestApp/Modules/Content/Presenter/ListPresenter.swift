@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ListPresenterProtocol {
-    func getHits()
+    func getHits(isFirstTime: Bool)
     func deleteHit(indexPath: IndexPath)
 }
 class ListPresenter: ListPresenterProtocol {
@@ -24,8 +24,8 @@ class ListPresenter: ListPresenterProtocol {
         self.repository = repository
     }
 
-    func getHits() {
-        self.repository.getHits(onSuccess: { [weak self] (hitsResponse) in
+    func getHits(isFirstTime: Bool) {
+        self.repository.getHits(isFirstTime: isFirstTime, onSuccess: { [weak self] (hitsResponse) in
             self?.repository.getDeletedHits(deletedHits: { [weak self] (set) in
                 self?.hits = []
                 let filterHits = hitsResponse.hits?.filter({ (filterHit) -> Bool in
@@ -33,14 +33,21 @@ class ListPresenter: ListPresenterProtocol {
                 })
                 if let hits = filterHits, !hits.isEmpty {
                     self?.hits = hits
-                    self?.view.displayHits(hits: hits)
+                    DispatchQueue.main.async {
+                        self?.view.displayHits(hits: hits)
+                    }
+
                 } else {
-                    self?.view.displayError(message: StringConstant.CONTENT_LIST_EMPTY)
+                    DispatchQueue.main.async {
+                        self?.view.displayError(message: StringConstant.CONTENT_LIST_EMPTY)
+                    }
                 }
             })
 
         }) { [weak self] (errorString) in
-            self?.view.displayError(message: errorString)
+            DispatchQueue.main.async {
+                self?.view.displayError(message: errorString)
+            }
         }
     }
 
@@ -51,7 +58,10 @@ class ListPresenter: ListPresenterProtocol {
             let filterHits = self?.hits.filter({ (filterHit) -> Bool in
                 return !set.contains(filterHit.objectID ?? "")
             })
-            self?.view.deleteHit(hits: filterHits!, indexPath: indexPath)
+            self?.hits = filterHits!
+            DispatchQueue.main.async {
+                self?.view.deleteHit(hits: filterHits!, indexPath: indexPath)
+            }
         })
     }
 }

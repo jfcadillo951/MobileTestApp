@@ -25,7 +25,7 @@ class ContentRespositoryTest: XCTestCase {
         // Given
         repository = ContentRepository(serviceApi: ServiceApiSuccessSpy(), storage: StorageEmptySpy())
         //When
-        repository.getHits(onSuccess: { (hitsResponse) in
+        repository.getHits(isFirstTime: false, onSuccess: { (hitsResponse) in
             // then
             XCTAssertEqual(hitsResponse.hits?.count, 2)
             XCTAssertEqual(hitsResponse.hits?.first?.objectID, "18833731")
@@ -40,7 +40,7 @@ class ContentRespositoryTest: XCTestCase {
         // Given
         repository = ContentRepository(serviceApi: ServiceApiErrorSpy(), storage: StorageEmptySpy())
         //When
-        repository.getHits(onSuccess: { (hitsResponse) in
+        repository.getHits(isFirstTime: false, onSuccess: { (hitsResponse) in
             XCTAssert(false)
         }) { (errorString) in
             // then
