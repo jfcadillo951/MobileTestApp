@@ -4,7 +4,7 @@ This is a mobile app test using MVP pattern + repository, also includes unit tes
 
 ## Requirements
 
-- iOS 12.0+
+- iOS 11.0+
 - Xcode 10.1+
 - Swift 4.2+
 
