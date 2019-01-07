@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailPresenterProtocol {
-    func load()
+    func load(urlString: String)
 }
 class DetailPresenter: DetailPresenterProtocol {
     let view: DetailViewProtocol
@@ -18,7 +18,9 @@ class DetailPresenter: DetailPresenterProtocol {
         self.view = view
     }
 
-    func load() {
-        self.view.displayDetail()
+    func load(urlString: String) {
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        self.view.displayDetail(urlRequest: urlRequest)
     }
 }

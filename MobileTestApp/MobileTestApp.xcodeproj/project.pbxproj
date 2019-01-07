@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4FA8EC781424C5A1ECDE6E78 /* Pods_MobileTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94673E92EC9747FFC8E42533 /* Pods_MobileTestAppUITests.framework */; };
 		57C7C7E9B73F5E019DACB959 /* Pods_MobileTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F366D4A50DD43B475B4759 /* Pods_MobileTestAppTests.framework */; };
+		8EA2C1CC21E2EBBE0004843E /* DetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2C1CB21E2EBBE0004843E /* DetailPresenterTest.swift */; };
+		8EA2C1CE21E2EBD30004843E /* DetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA2C1CD21E2EBD30004843E /* DetailViewSpy.swift */; };
 		8EB39C4F21E065A5002D2FB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C4E21E065A5002D2FB0 /* AppDelegate.swift */; };
 		8EB39C5121E065A5002D2FB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB39C5021E065A5002D2FB0 /* ViewController.swift */; };
 		8EB39C5421E065A5002D2FB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB39C5221E065A5002D2FB0 /* Main.storyboard */; };
@@ -66,6 +68,8 @@
 		391806203055FF91DBD44E81 /* Pods-MobileTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileTestAppTests/Pods-MobileTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D49CFC7F3D682A6050AE13E /* Pods_MobileTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8855A45779BB9939796D8721 /* Pods-MobileTestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileTestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileTestAppUITests/Pods-MobileTestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8EA2C1CB21E2EBBE0004843E /* DetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTest.swift; sourceTree = "<group>"; };
+		8EA2C1CD21E2EBD30004843E /* DetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewSpy.swift; sourceTree = "<group>"; };
 		8EB39C4B21E065A4002D2FB0 /* MobileTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EB39C4E21E065A5002D2FB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EB39C5021E065A5002D2FB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 			children = (
 				8EB39CA621E19ACE002D2FB0 /* Spies */,
 				8EB39CA921E19D2F002D2FB0 /* ListPresenterTest.swift */,
+				8EA2C1CB21E2EBBE0004843E /* DetailPresenterTest.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			children = (
 				8EB39CA721E19AED002D2FB0 /* ContentRepositorySpy.swift */,
 				8EB39CAB21E19D90002D2FB0 /* ListViewSpy.swift */,
+				8EA2C1CD21E2EBD30004843E /* DetailViewSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -615,12 +621,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EB39CA821E19AED002D2FB0 /* ContentRepositorySpy.swift in Sources */,
+				8EA2C1CE21E2EBD30004843E /* DetailViewSpy.swift in Sources */,
 				8EB39CAA21E19D2F002D2FB0 /* ListPresenterTest.swift in Sources */,
 				8EB39C6421E065A5002D2FB0 /* MobileTestAppTests.swift in Sources */,
 				8EB39CAC21E19D90002D2FB0 /* ListViewSpy.swift in Sources */,
 				8EB39C9621E14857002D2FB0 /* ServiceApiSpy.swift in Sources */,
 				8EB39C9B21E14FB3002D2FB0 /* ContentRespositoryTest.swift in Sources */,
 				8EB39CB021E1A8B6002D2FB0 /* StorageSpy.swift in Sources */,
+				8EA2C1CC21E2EBBE0004843E /* DetailPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

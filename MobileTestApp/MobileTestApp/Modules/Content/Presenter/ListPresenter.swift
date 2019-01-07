@@ -66,10 +66,14 @@ class ListPresenter: ListPresenterProtocol {
     }
 
     func selectHit(indexPath: IndexPath) {
-        let hit = hits[indexPath.row]
-        if let urlString = hit.url,
-            let _ = URL(string: urlString) {
-            self.view.displayHitDetail(hit: hit)
+        if indexPath.row < hits.count {
+            let hit = hits[indexPath.row]
+            if let urlString = hit.url,
+                let _ = URL(string: urlString) {
+                self.view.displayHitDetail(hit: hit)
+            } else {
+                self.view.displayError(message: StringConstant.CONTENT_LIST_HIT_NO_URL)
+            }
         } else {
             self.view.displayError(message: StringConstant.CONTENT_LIST_HIT_NO_URL)
         }

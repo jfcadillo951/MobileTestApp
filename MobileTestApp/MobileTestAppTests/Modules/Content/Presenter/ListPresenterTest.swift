@@ -65,4 +65,52 @@ class ListPresenterTest: XCTestCase {
         XCTAssertEqual(view.displayErrorMessage, StringConstant.UNKNOW_ERROR)
     }
 
+    func testDeleteHit() {
+        // Given
+        view = ListViewSpy()
+        let repository = ContentRepositorySuccessSpy()
+        presenter = ListPresenter(view: view, repository: repository)
+        presenter.getHits(isFirstTime: false)
+        view.deleteHitExpectation = expectation(description: "testDeleteHit")
+        let indexPath = IndexPath(row: 0, section: 0)
+
+        // When
+        presenter.deleteHit(indexPath: indexPath)
+
+        // Then
+        wait(for: [view.deleteHitExpectation!], timeout: 10.0)
+        XCTAssertTrue(view.deleteHitWasCalled)
+        XCTAssertEqual(view.deleteHits?.count, 0)
+        XCTAssertEqual(view.deleteHitIndexPath, indexPath)
+    }
+
+    func testSelectHitSuccess() {
+        // Given
+        view = ListViewSpy()
+        let repository = ContentRepositorySuccessSpy()
+        presenter = ListPresenter(view: view, repository: repository)
+        presenter.getHits(isFirstTime: false)
+
+        // When
+        presenter.selectHit(indexPath: IndexPath(row: 0, section: 0))
+
+        // Then
+        XCTAssertTrue(view.displayHitDetailWasCalled)
+        XCTAssertEqual(view.displayHitDetail?.objectID, presenter.hits.first?.objectID)
+    }
+
+    func testSelectHitNoURLError() {
+        // Given
+        view = ListViewSpy()
+        let repository = ContentRepositorySuccessSpyWrongURL()
+        presenter = ListPresenter(view: view, repository: repository)
+        presenter.getHits(isFirstTime: false)
+
+        // When
+        presenter.selectHit(indexPath: IndexPath(row: 0, section: 0))
+
+        // Then
+        XCTAssertTrue(view.displayErrorWasCalled)
+        XCTAssertEqual(view.displayErrorMessage, StringConstant.CONTENT_LIST_HIT_NO_URL)
+    }
 }

@@ -30,11 +30,21 @@ class ListViewSpy: ListViewProtocol {
         displayErrorExpectation?.fulfill()
     }
 
+    var deleteHitWasCalled = false
+    var deleteHits: [Hit]?
+    var deleteHitIndexPath: IndexPath?
+    var deleteHitExpectation: XCTestExpectation?
     func deleteHit(hits: [Hit], indexPath: IndexPath) {
-
+        deleteHitWasCalled = true
+        deleteHits = hits
+        deleteHitIndexPath = indexPath
+        deleteHitExpectation?.fulfill()
     }
 
+    var displayHitDetailWasCalled = false
+    var displayHitDetail: Hit?
     func displayHitDetail(hit: Hit) {
-        
+        displayHitDetailWasCalled = true
+        displayHitDetail = hit
     }
 }

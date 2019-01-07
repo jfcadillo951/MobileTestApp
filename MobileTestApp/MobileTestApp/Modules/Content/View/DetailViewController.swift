@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 protocol DetailViewProtocol {
-    func displayDetail()
+    func displayDetail(urlRequest: URLRequest)
 }
 
 class DetailViewController: UIViewController {
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         presenter = DetailPresenter(view: self)
         self.activityIndicator.isHidden = false
         self.detailWebView.navigationDelegate = self
-        presenter?.load()
+        presenter?.load(urlString: urlString ?? "")
     }
 }
 
@@ -50,9 +50,8 @@ extension DetailViewController: WKNavigationDelegate {
 }
 
 extension DetailViewController: DetailViewProtocol {
-    func displayDetail() {
+    func displayDetail(urlRequest: URLRequest) {
         self.activityIndicator.startAnimating()
-        let url = URL(string: urlString ?? "")
-        self.detailWebView.load(URLRequest(url: url!))
+        self.detailWebView.load(urlRequest)
     }
 }
