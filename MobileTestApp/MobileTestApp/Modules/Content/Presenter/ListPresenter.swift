@@ -32,9 +32,9 @@ class ListPresenter: ListPresenterProtocol {
                     return !set.contains(filterHit.objectID ?? "")
                 })
                 if let hits = filterHits, !hits.isEmpty {
-                    self?.hits = hits
+                    self?.hits = (self?.getHitsSorted(hits: hits))!
                     DispatchQueue.main.async {
-                        self?.view.displayHits(hits: hits)
+                        self?.view.displayHits(hits: (self?.hits)!)
                     }
 
                 } else {
@@ -58,9 +58,9 @@ class ListPresenter: ListPresenterProtocol {
             let filterHits = self?.hits.filter({ (filterHit) -> Bool in
                 return !set.contains(filterHit.objectID ?? "")
             })
-            self?.hits = filterHits!
+            self?.hits = (self?.getHitsSorted(hits: filterHits!))!
             DispatchQueue.main.async {
-                self?.view.deleteHit(hits: filterHits!, indexPath: indexPath)
+                self?.view.deleteHit(hits: (self?.hits)!, indexPath: indexPath)
             }
         })
     }
@@ -73,6 +73,15 @@ class ListPresenter: ListPresenterProtocol {
         } else {
             self.view.displayError(message: StringConstant.CONTENT_LIST_HIT_NO_URL)
         }
+    }
 
+    private func getHitsSorted(hits: [Hit]) -> [Hit] {
+        return hits.sorted(by: { (a, b) -> Bool in
+            if let aDate = a.createdDateFormat,
+                let bDate = b.createdDateFormat {
+                return aDate < bDate
+            }
+            return true
+        })
     }
 }

@@ -28,7 +28,18 @@ class HitTableViewCell: UITableViewCell {
 
     func setup(data: Hit) {
         self.titleLabel.text = data.title
-        self.subTitleLabel.text = data.author
+        var subtitleDate = ""
+        if let date = data.createdDateFormat {
+            subtitleDate = DateHelper.sharedInstance.dayDifference(from: date)
+        }
+        var subtitle = data.author ?? ""
+        if !subtitleDate.isEmpty {
+            if !subtitle.isEmpty {
+                subtitle = subtitle + " - "
+            }
+            subtitle = subtitle + subtitleDate
+        }
+        self.subTitleLabel.text = subtitle
     }
 
     override func prepareForReuse() {
